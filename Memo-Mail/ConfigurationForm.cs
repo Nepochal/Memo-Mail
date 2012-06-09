@@ -108,6 +108,7 @@ namespace Nepochal.MemoMail
       textBoxHeader.TextChanged += new EventHandler(ValueChanged);
       numericUpDownSmtpPort.ValueChanged += new EventHandler(ValueChanged);
       textBoxFrom.TextChanged += new EventHandler(ValueChanged);
+      checkBoxAlwaysUseDefault.CheckedChanged += new EventHandler(ValueChanged);
     }
 
     private Config SetConfig()
@@ -121,6 +122,7 @@ namespace Nepochal.MemoMail
       lcNewConfig.SmtpAddress = textBoxSmtpMail.Text;
       lcNewConfig.SmtpServer = textBoxServer.Text;
       lcNewConfig.Username = textBoxUsername.Text;
+      lcNewConfig.AlwaysUseDefaultheader = checkBoxAlwaysUseDefault.Checked;
 
       return lcNewConfig;
     }
@@ -135,6 +137,7 @@ namespace Nepochal.MemoMail
       textBoxSmtpMail.Text = pcConfig.SmtpAddress;
       textBoxServer.Text = pcConfig.SmtpServer;
       textBoxUsername.Text = pcConfig.Username;
+      checkBoxAlwaysUseDefault.Checked = pcConfig.AlwaysUseDefaultheader;
     }
 
     #endregion

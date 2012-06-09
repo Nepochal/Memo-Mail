@@ -1,4 +1,4 @@
-Memo-Mail is a very simple smtp-client that allows you to quickly send mails to a specific e-mail address so that you can send links or notes from work to home for example. Once configured this programm only shows a send form you can fill with text. With double enter the mail will be sent in background. 
+Memo-Mail is a very simple smtp-client that allows you to quickly send mails to a specific e-mail address so that you can send links or notes from work to home for example. Once configured this program only shows a send form you can fill with text. With double enter the mail will be sent in background. 
 
 Feel free to send me patches.
 

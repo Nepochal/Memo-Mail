@@ -81,6 +81,12 @@ namespace Nepochal.MemoMail
       set { msFrom = value; }
     }
 
+    public bool AlwaysUseDefaultheader
+    {
+      get { return mbAlwaysUseDefaultHeader; }
+      set { mbAlwaysUseDefaultHeader = value; }
+    }
+
     public bool ShowManual
     {
       get { return mbShowManual; }
@@ -129,6 +135,7 @@ namespace Nepochal.MemoMail
     private string msHeader;
     private int miPort;
     private string msFrom;
+    private bool mbAlwaysUseDefaultHeader;
     private bool mbShowManual = true;
     private Point mpSendFormPosition = new Point(200, 200);
     private int miSendFormHeight = 80;
