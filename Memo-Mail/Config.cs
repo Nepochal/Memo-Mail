@@ -87,6 +87,18 @@ namespace Nepochal.MemoMail
       set { mbAlwaysUseDefaultHeader = value; }
     }
 
+    public bool SendMailOnDoubleEnter
+    {
+      get { return mbSendMailOnDoubleEnter; }
+      set { mbSendMailOnDoubleEnter = value; }
+    }
+
+    public bool Clipboard2Mail
+    {
+      get { return mbClipboard2Mail; }
+      set { mbClipboard2Mail = value; }
+    }
+
     public bool ShowManual
     {
       get { return mbShowManual; }
@@ -135,7 +147,9 @@ namespace Nepochal.MemoMail
     private string msHeader;
     private int miPort;
     private string msFrom;
-    private bool mbAlwaysUseDefaultHeader;
+    private bool mbAlwaysUseDefaultHeader = false;
+    private bool mbSendMailOnDoubleEnter = false;
+    private bool mbClipboard2Mail = false;
     private bool mbShowManual = true;
     private Point mpSendFormPosition = new Point(200, 200);
     private int miSendFormHeight = 80;

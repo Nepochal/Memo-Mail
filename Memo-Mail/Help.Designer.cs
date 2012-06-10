@@ -95,7 +95,7 @@
       this.labelDoubleEnterText.Name = "labelDoubleEnterText";
       this.labelDoubleEnterText.Size = new System.Drawing.Size(133, 15);
       this.labelDoubleEnterText.TabIndex = 7;
-      this.labelDoubleEnterText.Text = "Send mail";
+      this.labelDoubleEnterText.Text = "Send mail (if enabled)";
       // 
       // labelDoubleEnter
       // 

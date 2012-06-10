@@ -31,6 +31,10 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigurationForm));
       this.tabControl = new System.Windows.Forms.TabControl();
       this.tabPageSmtp = new System.Windows.Forms.TabPage();
+      this.textBoxFrom = new System.Windows.Forms.TextBox();
+      this.labelFrom = new System.Windows.Forms.Label();
+      this.numericUpDownSmtpPort = new System.Windows.Forms.NumericUpDown();
+      this.labelSmtpPort = new System.Windows.Forms.Label();
       this.textBoxSmtpMail = new System.Windows.Forms.TextBox();
       this.labelSmtpMail = new System.Windows.Forms.Label();
       this.textBoxPassword = new System.Windows.Forms.TextBox();
@@ -40,20 +44,20 @@
       this.textBoxServer = new System.Windows.Forms.TextBox();
       this.labelServer = new System.Windows.Forms.Label();
       this.tabPageReceiver = new System.Windows.Forms.TabPage();
+      this.checkBoxAlwaysUseDefault = new System.Windows.Forms.CheckBox();
       this.textBoxHeader = new System.Windows.Forms.TextBox();
       this.labelHeader = new System.Windows.Forms.Label();
       this.textBoxPopMail = new System.Windows.Forms.TextBox();
       this.labelPopMail = new System.Windows.Forms.Label();
       this.buttonAccept = new System.Windows.Forms.Button();
-      this.textBoxFrom = new System.Windows.Forms.TextBox();
-      this.labelFrom = new System.Windows.Forms.Label();
-      this.numericUpDownSmtpPort = new System.Windows.Forms.NumericUpDown();
-      this.labelSmtpPort = new System.Windows.Forms.Label();
-      this.checkBoxAlwaysUseDefault = new System.Windows.Forms.CheckBox();
+      this.tabPageMisc = new System.Windows.Forms.TabPage();
+      this.checkBoxSendDoubleEnter = new System.Windows.Forms.CheckBox();
+      this.checkBoxClipboard2Mail = new System.Windows.Forms.CheckBox();
       this.tabControl.SuspendLayout();
       this.tabPageSmtp.SuspendLayout();
-      this.tabPageReceiver.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSmtpPort)).BeginInit();
+      this.tabPageReceiver.SuspendLayout();
+      this.tabPageMisc.SuspendLayout();
       this.SuspendLayout();
       // 
       // tabControl
@@ -63,6 +67,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
       this.tabControl.Controls.Add(this.tabPageSmtp);
       this.tabControl.Controls.Add(this.tabPageReceiver);
+      this.tabControl.Controls.Add(this.tabPageMisc);
       this.tabControl.Location = new System.Drawing.Point(2, 1);
       this.tabControl.Name = "tabControl";
       this.tabControl.SelectedIndex = 0;
@@ -89,6 +94,48 @@
       this.tabPageSmtp.TabIndex = 0;
       this.tabPageSmtp.Text = "Sender";
       this.tabPageSmtp.UseVisualStyleBackColor = true;
+      // 
+      // textBoxFrom
+      // 
+      this.textBoxFrom.Location = new System.Drawing.Point(4, 231);
+      this.textBoxFrom.Name = "textBoxFrom";
+      this.textBoxFrom.Size = new System.Drawing.Size(168, 20);
+      this.textBoxFrom.TabIndex = 11;
+      // 
+      // labelFrom
+      // 
+      this.labelFrom.AutoSize = true;
+      this.labelFrom.Location = new System.Drawing.Point(5, 215);
+      this.labelFrom.Name = "labelFrom";
+      this.labelFrom.Size = new System.Drawing.Size(79, 13);
+      this.labelFrom.TabIndex = 10;
+      this.labelFrom.Text = "From: (optional)";
+      // 
+      // numericUpDownSmtpPort
+      // 
+      this.numericUpDownSmtpPort.Location = new System.Drawing.Point(5, 148);
+      this.numericUpDownSmtpPort.Maximum = new decimal(new int[] {
+            49151,
+            0,
+            0,
+            0});
+      this.numericUpDownSmtpPort.Name = "numericUpDownSmtpPort";
+      this.numericUpDownSmtpPort.Size = new System.Drawing.Size(168, 20);
+      this.numericUpDownSmtpPort.TabIndex = 9;
+      this.numericUpDownSmtpPort.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+      // 
+      // labelSmtpPort
+      // 
+      this.labelSmtpPort.AutoSize = true;
+      this.labelSmtpPort.Location = new System.Drawing.Point(6, 132);
+      this.labelSmtpPort.Name = "labelSmtpPort";
+      this.labelSmtpPort.Size = new System.Drawing.Size(62, 13);
+      this.labelSmtpPort.TabIndex = 8;
+      this.labelSmtpPort.Text = "SMTP-Port:";
       // 
       // textBoxSmtpMail
       // 
@@ -169,6 +216,16 @@
       this.tabPageReceiver.Text = "Receiver";
       this.tabPageReceiver.UseVisualStyleBackColor = true;
       // 
+      // checkBoxAlwaysUseDefault
+      // 
+      this.checkBoxAlwaysUseDefault.AutoSize = true;
+      this.checkBoxAlwaysUseDefault.Location = new System.Drawing.Point(9, 90);
+      this.checkBoxAlwaysUseDefault.Name = "checkBoxAlwaysUseDefault";
+      this.checkBoxAlwaysUseDefault.Size = new System.Drawing.Size(171, 17);
+      this.checkBoxAlwaysUseDefault.TabIndex = 6;
+      this.checkBoxAlwaysUseDefault.Text = "Always use the default header.";
+      this.checkBoxAlwaysUseDefault.UseVisualStyleBackColor = true;
+      // 
       // textBoxHeader
       // 
       this.textBoxHeader.Location = new System.Drawing.Point(5, 63);
@@ -213,57 +270,36 @@
       this.buttonAccept.UseVisualStyleBackColor = true;
       this.buttonAccept.Click += new System.EventHandler(this.buttonAccept_Click);
       // 
-      // textBoxFrom
+      // tabPageMisc
       // 
-      this.textBoxFrom.Location = new System.Drawing.Point(4, 231);
-      this.textBoxFrom.Name = "textBoxFrom";
-      this.textBoxFrom.Size = new System.Drawing.Size(168, 20);
-      this.textBoxFrom.TabIndex = 11;
+      this.tabPageMisc.Controls.Add(this.checkBoxClipboard2Mail);
+      this.tabPageMisc.Controls.Add(this.checkBoxSendDoubleEnter);
+      this.tabPageMisc.Location = new System.Drawing.Point(4, 22);
+      this.tabPageMisc.Name = "tabPageMisc";
+      this.tabPageMisc.Size = new System.Drawing.Size(178, 258);
+      this.tabPageMisc.TabIndex = 2;
+      this.tabPageMisc.Text = "Misc.";
+      this.tabPageMisc.UseVisualStyleBackColor = true;
       // 
-      // labelFrom
+      // checkBoxSendDoubleEnter
       // 
-      this.labelFrom.AutoSize = true;
-      this.labelFrom.Location = new System.Drawing.Point(5, 215);
-      this.labelFrom.Name = "labelFrom";
-      this.labelFrom.Size = new System.Drawing.Size(79, 13);
-      this.labelFrom.TabIndex = 10;
-      this.labelFrom.Text = "From: (optional)";
+      this.checkBoxSendDoubleEnter.AutoSize = true;
+      this.checkBoxSendDoubleEnter.Location = new System.Drawing.Point(9, 7);
+      this.checkBoxSendDoubleEnter.Name = "checkBoxSendDoubleEnter";
+      this.checkBoxSendDoubleEnter.Size = new System.Drawing.Size(157, 17);
+      this.checkBoxSendDoubleEnter.TabIndex = 0;
+      this.checkBoxSendDoubleEnter.Text = "Send mail with double Enter";
+      this.checkBoxSendDoubleEnter.UseVisualStyleBackColor = true;
       // 
-      // numericUpDownSmtpPort
+      // checkBoxClipboard2Mail
       // 
-      this.numericUpDownSmtpPort.Location = new System.Drawing.Point(5, 148);
-      this.numericUpDownSmtpPort.Maximum = new decimal(new int[] {
-            49151,
-            0,
-            0,
-            0});
-      this.numericUpDownSmtpPort.Name = "numericUpDownSmtpPort";
-      this.numericUpDownSmtpPort.Size = new System.Drawing.Size(168, 20);
-      this.numericUpDownSmtpPort.TabIndex = 9;
-      this.numericUpDownSmtpPort.Value = new decimal(new int[] {
-            25,
-            0,
-            0,
-            0});
-      // 
-      // labelSmtpPort
-      // 
-      this.labelSmtpPort.AutoSize = true;
-      this.labelSmtpPort.Location = new System.Drawing.Point(6, 132);
-      this.labelSmtpPort.Name = "labelSmtpPort";
-      this.labelSmtpPort.Size = new System.Drawing.Size(62, 13);
-      this.labelSmtpPort.TabIndex = 8;
-      this.labelSmtpPort.Text = "SMTP-Port:";
-      // 
-      // checkBoxAlwaysUseDefault
-      // 
-      this.checkBoxAlwaysUseDefault.AutoSize = true;
-      this.checkBoxAlwaysUseDefault.Location = new System.Drawing.Point(9, 90);
-      this.checkBoxAlwaysUseDefault.Name = "checkBoxAlwaysUseDefault";
-      this.checkBoxAlwaysUseDefault.Size = new System.Drawing.Size(171, 17);
-      this.checkBoxAlwaysUseDefault.TabIndex = 6;
-      this.checkBoxAlwaysUseDefault.Text = "Always use the default header.";
-      this.checkBoxAlwaysUseDefault.UseVisualStyleBackColor = true;
+      this.checkBoxClipboard2Mail.AutoSize = true;
+      this.checkBoxClipboard2Mail.Location = new System.Drawing.Point(9, 28);
+      this.checkBoxClipboard2Mail.Name = "checkBoxClipboard2Mail";
+      this.checkBoxClipboard2Mail.Size = new System.Drawing.Size(163, 17);
+      this.checkBoxClipboard2Mail.TabIndex = 1;
+      this.checkBoxClipboard2Mail.Text = "Auto insert clipboard into mail";
+      this.checkBoxClipboard2Mail.UseVisualStyleBackColor = true;
       // 
       // ConfigurationForm
       // 
@@ -284,9 +320,11 @@
       this.tabControl.ResumeLayout(false);
       this.tabPageSmtp.ResumeLayout(false);
       this.tabPageSmtp.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSmtpPort)).EndInit();
       this.tabPageReceiver.ResumeLayout(false);
       this.tabPageReceiver.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSmtpPort)).EndInit();
+      this.tabPageMisc.ResumeLayout(false);
+      this.tabPageMisc.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -314,5 +352,8 @@
     private System.Windows.Forms.NumericUpDown numericUpDownSmtpPort;
     private System.Windows.Forms.Label labelSmtpPort;
     private System.Windows.Forms.CheckBox checkBoxAlwaysUseDefault;
+    private System.Windows.Forms.TabPage tabPageMisc;
+    private System.Windows.Forms.CheckBox checkBoxSendDoubleEnter;
+    private System.Windows.Forms.CheckBox checkBoxClipboard2Mail;
   }
 }
