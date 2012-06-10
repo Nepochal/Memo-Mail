@@ -115,7 +115,7 @@
       // 
       this.numericUpDownSmtpPort.Location = new System.Drawing.Point(5, 148);
       this.numericUpDownSmtpPort.Maximum = new decimal(new int[] {
-            49151,
+            65535,
             0,
             0,
             0});
@@ -239,9 +239,9 @@
       this.labelHeader.AutoSize = true;
       this.labelHeader.Location = new System.Drawing.Point(6, 47);
       this.labelHeader.Name = "labelHeader";
-      this.labelHeader.Size = new System.Drawing.Size(80, 13);
+      this.labelHeader.Size = new System.Drawing.Size(126, 13);
       this.labelHeader.TabIndex = 4;
-      this.labelHeader.Text = "Default header:";
+      this.labelHeader.Text = "Default header: (optional)";
       // 
       // textBoxPopMail
       // 

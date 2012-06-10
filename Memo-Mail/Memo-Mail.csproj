@@ -67,6 +67,7 @@
     <Compile Include="About.designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="Common.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="ConfigurationForm.cs">
       <SubType>Form</SubType>
