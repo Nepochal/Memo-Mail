@@ -121,7 +121,7 @@
             0});
       this.numericUpDownSmtpPort.Name = "numericUpDownSmtpPort";
       this.numericUpDownSmtpPort.Size = new System.Drawing.Size(168, 20);
-      this.numericUpDownSmtpPort.TabIndex = 9;
+      this.numericUpDownSmtpPort.TabIndex = 7;
       this.numericUpDownSmtpPort.Value = new decimal(new int[] {
             25,
             0,
@@ -134,7 +134,7 @@
       this.labelSmtpPort.Location = new System.Drawing.Point(6, 132);
       this.labelSmtpPort.Name = "labelSmtpPort";
       this.labelSmtpPort.Size = new System.Drawing.Size(62, 13);
-      this.labelSmtpPort.TabIndex = 8;
+      this.labelSmtpPort.TabIndex = 6;
       this.labelSmtpPort.Text = "SMTP-Port:";
       // 
       // textBoxSmtpMail
@@ -142,7 +142,7 @@
       this.textBoxSmtpMail.Location = new System.Drawing.Point(5, 191);
       this.textBoxSmtpMail.Name = "textBoxSmtpMail";
       this.textBoxSmtpMail.Size = new System.Drawing.Size(168, 20);
-      this.textBoxSmtpMail.TabIndex = 7;
+      this.textBoxSmtpMail.TabIndex = 9;
       // 
       // labelSmtpMail
       // 
@@ -150,7 +150,7 @@
       this.labelSmtpMail.Location = new System.Drawing.Point(6, 175);
       this.labelSmtpMail.Name = "labelSmtpMail";
       this.labelSmtpMail.Size = new System.Drawing.Size(69, 13);
-      this.labelSmtpMail.TabIndex = 6;
+      this.labelSmtpMail.TabIndex = 8;
       this.labelSmtpMail.Text = "Mail address:";
       // 
       // textBoxPassword
@@ -222,7 +222,7 @@
       this.checkBoxAlwaysUseDefault.Location = new System.Drawing.Point(9, 90);
       this.checkBoxAlwaysUseDefault.Name = "checkBoxAlwaysUseDefault";
       this.checkBoxAlwaysUseDefault.Size = new System.Drawing.Size(171, 17);
-      this.checkBoxAlwaysUseDefault.TabIndex = 6;
+      this.checkBoxAlwaysUseDefault.TabIndex = 4;
       this.checkBoxAlwaysUseDefault.Text = "Always use the default header.";
       this.checkBoxAlwaysUseDefault.UseVisualStyleBackColor = true;
       // 
@@ -231,7 +231,7 @@
       this.textBoxHeader.Location = new System.Drawing.Point(5, 63);
       this.textBoxHeader.Name = "textBoxHeader";
       this.textBoxHeader.Size = new System.Drawing.Size(168, 20);
-      this.textBoxHeader.TabIndex = 5;
+      this.textBoxHeader.TabIndex = 3;
       this.textBoxHeader.Text = "[MemoMail]";
       // 
       // labelHeader
@@ -240,7 +240,7 @@
       this.labelHeader.Location = new System.Drawing.Point(6, 47);
       this.labelHeader.Name = "labelHeader";
       this.labelHeader.Size = new System.Drawing.Size(126, 13);
-      this.labelHeader.TabIndex = 4;
+      this.labelHeader.TabIndex = 2;
       this.labelHeader.Text = "Default header: (optional)";
       // 
       // textBoxPopMail
@@ -248,7 +248,7 @@
       this.textBoxPopMail.Location = new System.Drawing.Point(5, 21);
       this.textBoxPopMail.Name = "textBoxPopMail";
       this.textBoxPopMail.Size = new System.Drawing.Size(168, 20);
-      this.textBoxPopMail.TabIndex = 3;
+      this.textBoxPopMail.TabIndex = 1;
       // 
       // labelPopMail
       // 
@@ -256,7 +256,7 @@
       this.labelPopMail.Location = new System.Drawing.Point(6, 5);
       this.labelPopMail.Name = "labelPopMail";
       this.labelPopMail.Size = new System.Drawing.Size(69, 13);
-      this.labelPopMail.TabIndex = 2;
+      this.labelPopMail.TabIndex = 0;
       this.labelPopMail.Text = "Mail address:";
       // 
       // buttonAccept

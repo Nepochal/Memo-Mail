@@ -43,6 +43,7 @@ namespace Nepochal.MemoMail
     #region Member Variables
 
     private Config mcConfig;
+    private bool mbInvalidValues;
 
     #endregion
 
@@ -77,10 +78,15 @@ namespace Nepochal.MemoMail
 
     private void buttonAccept_Click(object sender, EventArgs e)
     {
-      mcConfig = SetConfig();
-      if (Config.SaveConfig(mcConfig))
+      if (!CheckSettings())
+        System.Media.SystemSounds.Exclamation.Play();
+      else
       {
-        buttonAccept.Enabled = false;
+        mcConfig = SetConfig();
+        if (Config.SaveConfig(mcConfig))
+        {
+          buttonAccept.Enabled = false;
+        }
       }
     }
 
@@ -111,6 +117,58 @@ namespace Nepochal.MemoMail
       checkBoxAlwaysUseDefault.CheckedChanged += new EventHandler(ValueChanged);
       checkBoxSendDoubleEnter.CheckedChanged += new EventHandler(ValueChanged);
       checkBoxClipboard2Mail.CheckedChanged += new EventHandler(ValueChanged);
+    }
+
+    private bool CheckSettings()
+    {
+      mbInvalidValues = false;
+
+
+      //Sender
+      //------
+      TabPage ltpCurrent = tabPageSmtp;
+
+      //Server
+      SetErrorStatus(textBoxServer, labelServer, ltpCurrent, !Common.CheckServer(textBoxServer.Text));
+
+      //Username
+      SetErrorStatus(textBoxUsername, labelUsername, ltpCurrent, string.IsNullOrEmpty(textBoxUsername.Text));
+
+      //Password
+      SetErrorStatus(textBoxPassword, labelPassword, ltpCurrent, string.IsNullOrEmpty(textBoxPassword.Text));
+
+      //SMTP-Mail
+      SetErrorStatus(textBoxSmtpMail, labelSmtpMail, ltpCurrent, !Common.CheckMailAddress(textBoxSmtpMail.Text));
+
+
+      //Receiver
+      //--------
+      ltpCurrent = tabPageReceiver;
+
+      //Mail
+      SetErrorStatus(textBoxPopMail, labelPopMail, ltpCurrent, !Common.CheckMailAddress(textBoxPopMail.Text));
+
+
+      return !mbInvalidValues;
+    }
+
+    /// <summary>
+    /// Sets the foreground color of the label on red or black. Sets focus on the Textbox on first error.
+    /// </summary>
+    private void SetErrorStatus(TextBox ptbTextBox, Label plLabel, TabPage ptpTabpage, bool pbError)
+    {
+      plLabel.ForeColor = (pbError) ? Color.Red : Color.Black;
+
+      if (pbError)
+      {
+        if (!mbInvalidValues)
+        {
+          ptpTabpage.Show();
+          ptbTextBox.Focus();
+          ptbTextBox.SelectAll();
+        }
+        mbInvalidValues = true;
+      }
     }
 
     private Config SetConfig()
