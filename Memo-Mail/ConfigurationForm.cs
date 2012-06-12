@@ -82,8 +82,9 @@ namespace Nepochal.MemoMail
         System.Media.SystemSounds.Exclamation.Play();
       else
       {
+        byte[] lbKey = Common.CreateKey();
         mcConfig = SetConfig();
-        if (Config.SaveConfig(mcConfig))
+        if (Config.SaveConfig(mcConfig, lbKey))
         {
           buttonAccept.Enabled = false;
         }
@@ -163,7 +164,7 @@ namespace Nepochal.MemoMail
       {
         if (!mbInvalidValues)
         {
-          ptpTabpage.Show();
+          tabControl.SelectedTab = ptpTabpage;
           ptbTextBox.Focus();
           ptbTextBox.SelectAll();
         }

@@ -169,15 +169,17 @@ namespace Nepochal.MemoMail
 
     #region Methods
 
-    internal static bool SaveConfig(Config pcConfig)
+    internal static bool SaveConfig(Config pcConfig, byte[] pbKey)
     {
+      if (pbKey.Length != 32)
+        return false;
+
       try
       {
         Rijndael lrCrypto = Rijndael.Create();
         lrCrypto.KeySize = 256;
         lrCrypto.IV = Encoding.ASCII.GetBytes("nepochalnepochal");
-        //using a hard coded key is a temporarily solution
-        lrCrypto.Key = Encoding.ASCII.GetBytes("R7q{0Iv<#!dZp?§mFt47Dfw@lO2 Hy|l");
+        lrCrypto.Key = pbKey;
 
         string lsFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Memo-Mail");
         if (!Directory.Exists(lsFilePath))
@@ -205,8 +207,11 @@ namespace Nepochal.MemoMail
       }
     }
 
-    internal static Config LoadConfig()
+    internal static Config LoadConfig(byte[] pbKey)
     {
+      if (pbKey.Length != 32)
+        return null;
+
       try
       {
         string lsFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Memo-Mail");
@@ -219,8 +224,7 @@ namespace Nepochal.MemoMail
         Rijndael lrCrypto = Rijndael.Create();
         lrCrypto.KeySize = 256;
         lrCrypto.IV = Encoding.ASCII.GetBytes("nepochalnepochal");
-        //using a hard coded key is a temporarily solution
-        lrCrypto.Key = Encoding.ASCII.GetBytes("R7q{0Iv<#!dZp?§mFt47Dfw@lO2 Hy|l");
+        lrCrypto.Key = pbKey;
 
         FileStream lfsFile = new FileStream(lsFilePath, FileMode.Open, FileAccess.Read);
         CryptoStream lcsDecrypt = new CryptoStream(lfsFile, lrCrypto.CreateDecryptor(), CryptoStreamMode.Read);

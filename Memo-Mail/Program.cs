@@ -32,7 +32,8 @@ namespace Nepochal.MemoMail
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
 
-      Config lcConfig = Config.LoadConfig();
+      byte[] lbKey = Common.CreateKey();
+      Config lcConfig = Config.LoadConfig(lbKey);
       if (lcConfig == null)
       {
         ConfigurationForm lcConfigurationForm = new ConfigurationForm();

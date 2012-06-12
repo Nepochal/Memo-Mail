@@ -123,7 +123,8 @@ namespace Nepochal.MemoMail
       mcConfig.WidthSendForm = Width;
       mcConfig.HeightSendForm = Height;
 
-      Config.SaveConfig(mcConfig);
+      byte[] lbKey = Common.CreateKey();
+      Config.SaveConfig(mcConfig, lbKey);
     }
 
     #endregion
@@ -145,7 +146,8 @@ namespace Nepochal.MemoMail
       if (lhHelp.ShowOnStartup != mcConfig.ShowManual)
         mcConfig.ShowManual = lhHelp.ShowOnStartup;
       mcConfig.LocationHelp = lhHelp.Location;
-      Config.SaveConfig(mcConfig);
+      byte[] lbKey = Common.CreateKey();
+      Config.SaveConfig(mcConfig, lbKey);
     }
 
     #endregion
