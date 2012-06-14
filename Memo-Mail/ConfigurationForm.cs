@@ -116,6 +116,7 @@ namespace Nepochal.MemoMail
       numericUpDownSmtpPort.ValueChanged += new EventHandler(ValueChanged);
       textBoxFrom.TextChanged += new EventHandler(ValueChanged);
       checkBoxAlwaysUseDefault.CheckedChanged += new EventHandler(ValueChanged);
+      checkBoxSendformForeground.CheckedChanged += new EventHandler(ValueChanged);
       checkBoxSendDoubleEnter.CheckedChanged += new EventHandler(ValueChanged);
       checkBoxClipboard2Mail.CheckedChanged += new EventHandler(ValueChanged);
     }
@@ -184,6 +185,7 @@ namespace Nepochal.MemoMail
       lcNewConfig.SmtpServer = textBoxServer.Text;
       lcNewConfig.Username = textBoxUsername.Text;
       lcNewConfig.AlwaysUseDefaultheader = checkBoxAlwaysUseDefault.Checked;
+      lcNewConfig.SendFormForeground = checkBoxSendformForeground.Checked;
       lcNewConfig.SendMailOnDoubleEnter = checkBoxSendDoubleEnter.Checked;
       lcNewConfig.Clipboard2Mail = checkBoxClipboard2Mail.Checked;
 
@@ -201,6 +203,7 @@ namespace Nepochal.MemoMail
       textBoxServer.Text = pcConfig.SmtpServer;
       textBoxUsername.Text = pcConfig.Username;
       checkBoxAlwaysUseDefault.Checked = pcConfig.AlwaysUseDefaultheader;
+      checkBoxSendformForeground.Checked = pcConfig.SendFormForeground;
       checkBoxSendDoubleEnter.Checked = pcConfig.SendMailOnDoubleEnter;
       checkBoxClipboard2Mail.Checked = pcConfig.Clipboard2Mail;
     }

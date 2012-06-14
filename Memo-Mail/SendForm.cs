@@ -127,9 +127,12 @@ namespace Nepochal.MemoMail
 
     private void SendForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      mcConfig.LocationSendForm = Location;
-      mcConfig.WidthSendForm = Width;
-      mcConfig.HeightSendForm = Height;
+      if (WindowState != FormWindowState.Minimized)
+      {
+        mcConfig.LocationSendForm = Location;
+        mcConfig.WidthSendForm = Width;
+        mcConfig.HeightSendForm = Height;
+      }
 
       byte[] lbKey = Common.CreateKey();
       Config.SaveConfig(mcConfig, lbKey);

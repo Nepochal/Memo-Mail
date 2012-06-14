@@ -141,16 +141,12 @@
       this.ClientSize = new System.Drawing.Size(354, 226);
       this.Controls.Add(this.textBoxMessage);
       this.Controls.Add(this.menuStrip);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.KeyPreview = true;
       this.MainMenuStrip = this.menuStrip;
       this.MaximizeBox = false;
-      this.MinimizeBox = false;
       this.MinimumSize = new System.Drawing.Size(200, 120);
       this.Name = "SendForm";
-      this.ShowIcon = false;
-      this.ShowInTaskbar = false;
       this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
       this.Text = "Memo-Mail (unstable - in development)";
       this.TopMost = true;

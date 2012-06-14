@@ -128,7 +128,7 @@
       // Help
       // 
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-      this.ClientSize = new System.Drawing.Size(217, 158);
+      this.ClientSize = new System.Drawing.Size(217, 162);
       this.ControlBox = false;
       this.Controls.Add(this.buttonClose);
       this.Controls.Add(this.checkBoxShowOnStartup);
@@ -140,13 +140,14 @@
       this.Controls.Add(this.labelF2);
       this.Controls.Add(this.labelF1Text);
       this.Controls.Add(this.labelF1);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MaximizeBox = false;
       this.MaximumSize = new System.Drawing.Size(223, 186);
       this.MinimizeBox = false;
       this.MinimumSize = new System.Drawing.Size(223, 186);
       this.Name = "Help";
+      this.ShowInTaskbar = false;
       this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
       this.Text = "Memo-Mail Help";
       this.ResumeLayout(false);

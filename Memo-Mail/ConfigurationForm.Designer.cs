@@ -49,10 +49,11 @@
       this.labelHeader = new System.Windows.Forms.Label();
       this.textBoxPopMail = new System.Windows.Forms.TextBox();
       this.labelPopMail = new System.Windows.Forms.Label();
-      this.buttonAccept = new System.Windows.Forms.Button();
       this.tabPageMisc = new System.Windows.Forms.TabPage();
-      this.checkBoxSendDoubleEnter = new System.Windows.Forms.CheckBox();
       this.checkBoxClipboard2Mail = new System.Windows.Forms.CheckBox();
+      this.checkBoxSendDoubleEnter = new System.Windows.Forms.CheckBox();
+      this.buttonAccept = new System.Windows.Forms.Button();
+      this.checkBoxSendformForeground = new System.Windows.Forms.CheckBox();
       this.tabControl.SuspendLayout();
       this.tabPageSmtp.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSmtpPort)).BeginInit();
@@ -259,6 +260,38 @@
       this.labelPopMail.TabIndex = 0;
       this.labelPopMail.Text = "Mail address:";
       // 
+      // tabPageMisc
+      // 
+      this.tabPageMisc.Controls.Add(this.checkBoxSendformForeground);
+      this.tabPageMisc.Controls.Add(this.checkBoxClipboard2Mail);
+      this.tabPageMisc.Controls.Add(this.checkBoxSendDoubleEnter);
+      this.tabPageMisc.Location = new System.Drawing.Point(4, 22);
+      this.tabPageMisc.Name = "tabPageMisc";
+      this.tabPageMisc.Size = new System.Drawing.Size(178, 258);
+      this.tabPageMisc.TabIndex = 2;
+      this.tabPageMisc.Text = "Misc.";
+      this.tabPageMisc.UseVisualStyleBackColor = true;
+      // 
+      // checkBoxClipboard2Mail
+      // 
+      this.checkBoxClipboard2Mail.AutoSize = true;
+      this.checkBoxClipboard2Mail.Location = new System.Drawing.Point(9, 49);
+      this.checkBoxClipboard2Mail.Name = "checkBoxClipboard2Mail";
+      this.checkBoxClipboard2Mail.Size = new System.Drawing.Size(163, 17);
+      this.checkBoxClipboard2Mail.TabIndex = 1;
+      this.checkBoxClipboard2Mail.Text = "Auto insert clipboard into mail";
+      this.checkBoxClipboard2Mail.UseVisualStyleBackColor = true;
+      // 
+      // checkBoxSendDoubleEnter
+      // 
+      this.checkBoxSendDoubleEnter.AutoSize = true;
+      this.checkBoxSendDoubleEnter.Location = new System.Drawing.Point(9, 28);
+      this.checkBoxSendDoubleEnter.Name = "checkBoxSendDoubleEnter";
+      this.checkBoxSendDoubleEnter.Size = new System.Drawing.Size(157, 17);
+      this.checkBoxSendDoubleEnter.TabIndex = 0;
+      this.checkBoxSendDoubleEnter.Text = "Send mail with double Enter";
+      this.checkBoxSendDoubleEnter.UseVisualStyleBackColor = true;
+      // 
       // buttonAccept
       // 
       this.buttonAccept.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -270,36 +303,15 @@
       this.buttonAccept.UseVisualStyleBackColor = true;
       this.buttonAccept.Click += new System.EventHandler(this.buttonAccept_Click);
       // 
-      // tabPageMisc
+      // checkBoxSendformForeground
       // 
-      this.tabPageMisc.Controls.Add(this.checkBoxClipboard2Mail);
-      this.tabPageMisc.Controls.Add(this.checkBoxSendDoubleEnter);
-      this.tabPageMisc.Location = new System.Drawing.Point(4, 22);
-      this.tabPageMisc.Name = "tabPageMisc";
-      this.tabPageMisc.Size = new System.Drawing.Size(178, 258);
-      this.tabPageMisc.TabIndex = 2;
-      this.tabPageMisc.Text = "Misc.";
-      this.tabPageMisc.UseVisualStyleBackColor = true;
-      // 
-      // checkBoxSendDoubleEnter
-      // 
-      this.checkBoxSendDoubleEnter.AutoSize = true;
-      this.checkBoxSendDoubleEnter.Location = new System.Drawing.Point(9, 7);
-      this.checkBoxSendDoubleEnter.Name = "checkBoxSendDoubleEnter";
-      this.checkBoxSendDoubleEnter.Size = new System.Drawing.Size(157, 17);
-      this.checkBoxSendDoubleEnter.TabIndex = 0;
-      this.checkBoxSendDoubleEnter.Text = "Send mail with double Enter";
-      this.checkBoxSendDoubleEnter.UseVisualStyleBackColor = true;
-      // 
-      // checkBoxClipboard2Mail
-      // 
-      this.checkBoxClipboard2Mail.AutoSize = true;
-      this.checkBoxClipboard2Mail.Location = new System.Drawing.Point(9, 28);
-      this.checkBoxClipboard2Mail.Name = "checkBoxClipboard2Mail";
-      this.checkBoxClipboard2Mail.Size = new System.Drawing.Size(163, 17);
-      this.checkBoxClipboard2Mail.TabIndex = 1;
-      this.checkBoxClipboard2Mail.Text = "Auto insert clipboard into mail";
-      this.checkBoxClipboard2Mail.UseVisualStyleBackColor = true;
+      this.checkBoxSendformForeground.AutoSize = true;
+      this.checkBoxSendformForeground.Location = new System.Drawing.Point(9, 7);
+      this.checkBoxSendformForeground.Name = "checkBoxSendformForeground";
+      this.checkBoxSendformForeground.Size = new System.Drawing.Size(165, 17);
+      this.checkBoxSendformForeground.TabIndex = 2;
+      this.checkBoxSendformForeground.Text = "Keep send form in foreground";
+      this.checkBoxSendformForeground.UseVisualStyleBackColor = true;
       // 
       // ConfigurationForm
       // 
@@ -308,11 +320,12 @@
       this.ClientSize = new System.Drawing.Size(187, 319);
       this.Controls.Add(this.buttonAccept);
       this.Controls.Add(this.tabControl);
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "ConfigurationForm";
+      this.ShowInTaskbar = false;
       this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
       this.Text = "Configuration";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Configuration_FormClosing);
@@ -355,5 +368,6 @@
     private System.Windows.Forms.TabPage tabPageMisc;
     private System.Windows.Forms.CheckBox checkBoxSendDoubleEnter;
     private System.Windows.Forms.CheckBox checkBoxClipboard2Mail;
+    private System.Windows.Forms.CheckBox checkBoxSendformForeground;
   }
 }
