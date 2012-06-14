@@ -60,6 +60,13 @@ namespace Nepochal.MemoMail
 
     #region Designer Methods
 
+    private void SendForm_Load(object sender, EventArgs e)
+    {
+      //Show help dialog on startup
+      if (mcConfig.ShowManual)
+        ShowHelp();
+    }
+
     private void textBoxMessage_KeyDown(object sender, KeyEventArgs e)
     {
       if (e.KeyCode != Keys.Enter)
@@ -86,36 +93,37 @@ namespace Nepochal.MemoMail
       }
     }
 
-    private void SendForm_KeyDown(object sender, KeyEventArgs e)
+    #region MenuStrip
+
+    private void ToolStripMenuItemSendMail_Click(object sender, EventArgs e)
     {
-      switch (e.KeyCode)
-      {
-        //F1: Show help dialog
-        case Keys.F1:
-          ShowHelp();
-          break;
-
-        //F12: Show about dialog
-        case Keys.F12:
-          About laAbout = new About("Memo-Mail", Program.msVersion);
-          laAbout.ShowDialog(this);
-          break;
-
-        //F2: Show configuration dialog
-        case Keys.F2:
-          ConfigurationForm lcConfiguration = new ConfigurationForm(mcConfig);
-          lcConfiguration.ShowDialog(this);
-          mcConfig = lcConfiguration.Config;
-          break;
-      }
+      SendMessage();
     }
 
-    private void SendForm_Load(object sender, EventArgs e)
+    private void ToolStripMenuItemConfiguration_Click(object sender, EventArgs e)
     {
-      //Show help dialog on startup
-      if (mcConfig.ShowManual)
-        ShowHelp();
+      ConfigurationForm lcConfiguration = new ConfigurationForm(mcConfig);
+      lcConfiguration.ShowDialog(this);
+      mcConfig = lcConfiguration.Config;
     }
+
+    private void ToolStripMenuItemExit_Click(object sender, EventArgs e)
+    {
+      Close();
+    }
+
+    private void ToolStripMenuItemShortcuts_Click(object sender, EventArgs e)
+    {
+      ShowHelp();
+    }
+
+    private void ToolStripMenuItemAbout_Click(object sender, EventArgs e)
+    {
+      About laAbout = new About("Memo-Mail", Program.msVersion);
+      laAbout.ShowDialog(this);
+    }
+
+    #endregion
 
     private void SendForm_FormClosing(object sender, FormClosingEventArgs e)
     {
