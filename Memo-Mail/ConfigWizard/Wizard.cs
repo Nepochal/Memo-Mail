@@ -17,6 +17,7 @@ namespace Nepochal.MemoMail.ConfigWizard
     private aConfigWizardPanel[] mcwpPanels; //all panels
     private aConfigWizardPanel mcwpCurrentPanel; //the currently shown panel
     private int miCurrentPanelID = 0;
+    private bool mbPortableMode = false;
 
     #endregion
 
@@ -30,6 +31,11 @@ namespace Nepochal.MemoMail.ConfigWizard
     internal bool EnableBackButton
     {
       set { buttonBack.Enabled = value; }
+    }
+    internal bool PortableMode
+    {
+      get { return mbPortableMode; }
+      set { mbPortableMode = value; }
     }
 
     internal Config Config
@@ -83,7 +89,7 @@ namespace Nepochal.MemoMail.ConfigWizard
     private void buttonBack_Click(object sender, EventArgs e)
     {
       miCurrentPanelID--;
-      ShowPanel(mcwpPanels[miCurrentPanelID]
+      ShowPanel(mcwpPanels[miCurrentPanelID]);
     }
 
     #endregion
@@ -93,8 +99,9 @@ namespace Nepochal.MemoMail.ConfigWizard
     private void InitializePanels()
     {
       Panels.WelcomePanel lp1 = new Panels.WelcomePanel(this);
+      Panels.PortablePanel lp2 = new Panels.PortablePanel(this);
 
-      mcwpPanels = new aConfigWizardPanel[] { lp1 };
+      mcwpPanels = new aConfigWizardPanel[] { lp1, lp2 };
     }
 
     private aConfigWizardPanel FindPanel(Type ptPanelType)
