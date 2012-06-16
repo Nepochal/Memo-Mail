@@ -20,7 +20,7 @@ namespace Nepochal.MemoMail.ConfigWizard
     #region accessors
 
     //Enables or disables the next button in the wizard-form
-    private bool EnableNextButton
+    internal bool EnableNextButton
     {
       set { mwOwner.EnableNextButton = value; }
     }

@@ -31,7 +31,16 @@ namespace Nepochal.MemoMail.ConfigWizard.Panels
     internal override void OnShow()
     {
       mwOwner.EnableBackButton = false;
+      EnableNextButton = true;
     }
+
+    internal override bool CheckInputs()
+    {
+      return true;
+    }
+
+    internal override void InsertInformationIntoConfig(Config pcConfig)
+    { }
 
     #endregion
 

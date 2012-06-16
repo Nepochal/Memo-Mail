@@ -16,6 +16,7 @@ namespace Nepochal.MemoMail.ConfigWizard
     private Config mcConfig = new Config();
     private aConfigWizardPanel[] mcwpPanels; //all panels
     private aConfigWizardPanel mcwpCurrentPanel; //the currently shown panel
+    private int miCurrentPanelID = 0;
 
     #endregion
 
@@ -70,6 +71,19 @@ namespace Nepochal.MemoMail.ConfigWizard
         return;
       }
       e.Cancel = true;
+    }
+
+    private void buttonNext_Click(object sender, EventArgs e)
+    {
+      mcwpCurrentPanel.InsertInformationIntoConfig(mcConfig);
+      miCurrentPanelID++;
+      ShowPanel(mcwpPanels[miCurrentPanelID]);
+    }
+
+    private void buttonBack_Click(object sender, EventArgs e)
+    {
+      miCurrentPanelID--;
+      ShowPanel(mcwpPanels[miCurrentPanelID]
     }
 
     #endregion
