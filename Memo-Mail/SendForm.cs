@@ -132,6 +132,12 @@ namespace Nepochal.MemoMail
       TopMost = mcConfig.SendFormForeground;
     }
 
+    private void ToolStripMenuItemConfigWizard_Click(object sender, EventArgs e)
+    {
+      ConfigWizard.Wizard lwWizard = new ConfigWizard.Wizard();
+      lwWizard.ShowDialog();
+    }
+
     private void ToolStripMenuItemExit_Click(object sender, EventArgs e)
     {
       Close();

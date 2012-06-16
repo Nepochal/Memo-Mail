@@ -61,6 +61,7 @@ namespace Nepochal.MemoMail
       this.ToolStripMenuItemShortcuts = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStripMenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
       this.textBoxHeader = new System.Windows.Forms.TextBox();
+      this.ToolStripMenuItemConfigWizard = new System.Windows.Forms.ToolStripMenuItem();
       this.buttonSend = new System.Windows.Forms.Button();
       this.menuStrip.SuspendLayout();
       this.SuspendLayout();
@@ -95,6 +96,7 @@ namespace Nepochal.MemoMail
             this.ToolStripMenuItemSendMail,
             this.toolStripMenuItemSeperator1,
             this.ToolStripMenuItemConfiguration,
+            this.ToolStripMenuItemConfigWizard,
             this.toolStripMenuItemSepertor2,
             this.ToolStripMenuItemExit});
       this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -104,32 +106,32 @@ namespace Nepochal.MemoMail
       // ToolStripMenuItemSendMail
       // 
       this.ToolStripMenuItemSendMail.Name = "ToolStripMenuItemSendMail";
-      this.ToolStripMenuItemSendMail.Size = new System.Drawing.Size(167, 22);
+      this.ToolStripMenuItemSendMail.Size = new System.Drawing.Size(214, 22);
       this.ToolStripMenuItemSendMail.Text = "Send mail";
       this.ToolStripMenuItemSendMail.Click += new System.EventHandler(this.ToolStripMenuItemSendMail_Click);
       // 
       // toolStripMenuItemSeperator1
       // 
       this.toolStripMenuItemSeperator1.Name = "toolStripMenuItemSeperator1";
-      this.toolStripMenuItemSeperator1.Size = new System.Drawing.Size(164, 6);
+      this.toolStripMenuItemSeperator1.Size = new System.Drawing.Size(211, 6);
       // 
       // ToolStripMenuItemConfiguration
       // 
       this.ToolStripMenuItemConfiguration.Name = "ToolStripMenuItemConfiguration";
       this.ToolStripMenuItemConfiguration.ShortcutKeys = System.Windows.Forms.Keys.F2;
-      this.ToolStripMenuItemConfiguration.Size = new System.Drawing.Size(167, 22);
+      this.ToolStripMenuItemConfiguration.Size = new System.Drawing.Size(214, 22);
       this.ToolStripMenuItemConfiguration.Text = "Configuration";
       this.ToolStripMenuItemConfiguration.Click += new System.EventHandler(this.ToolStripMenuItemConfiguration_Click);
       // 
       // toolStripMenuItemSepertor2
       // 
       this.toolStripMenuItemSepertor2.Name = "toolStripMenuItemSepertor2";
-      this.toolStripMenuItemSepertor2.Size = new System.Drawing.Size(164, 6);
+      this.toolStripMenuItemSepertor2.Size = new System.Drawing.Size(211, 6);
       // 
       // ToolStripMenuItemExit
       // 
       this.ToolStripMenuItemExit.Name = "ToolStripMenuItemExit";
-      this.ToolStripMenuItemExit.Size = new System.Drawing.Size(167, 22);
+      this.ToolStripMenuItemExit.Size = new System.Drawing.Size(214, 22);
       this.ToolStripMenuItemExit.Text = "Exit";
       this.ToolStripMenuItemExit.Click += new System.EventHandler(this.ToolStripMenuItemExit_Click);
       // 
@@ -178,6 +180,13 @@ namespace Nepochal.MemoMail
       this.buttonSend.UseVisualStyleBackColor = true;
       this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
       // 
+      // ToolStripMenuItemConfigWizard
+      // 
+      this.ToolStripMenuItemConfigWizard.Name = "ToolStripMenuItemConfigWizard";
+      this.ToolStripMenuItemConfigWizard.Size = new System.Drawing.Size(214, 22);
+      this.ToolStripMenuItemConfigWizard.Text = "Start Configuration Wizard";
+      this.ToolStripMenuItemConfigWizard.Click += new System.EventHandler(this.ToolStripMenuItemConfigWizard_Click);
+      // 
       // SendForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,6 +227,7 @@ namespace Nepochal.MemoMail
     private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemShortcuts;
     private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemAbout;
     private System.Windows.Forms.TextBox textBoxHeader;
+    private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemConfigWizard;
     private System.Windows.Forms.Button buttonSend;
   }
 }

@@ -75,6 +75,24 @@
     <Compile Include="ConfigurationForm.Designer.cs">
       <DependentUpon>ConfigurationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfigWizard\aConfigWizardPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConfigWizard\aConfigWizardPanel.Designer.cs">
+      <DependentUpon>aConfigWizardPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigWizard\Panels\WelcomePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConfigWizard\Panels\WelcomePanel.Designer.cs">
+      <DependentUpon>WelcomePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigWizard\Wizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigWizard\Wizard.Designer.cs">
+      <DependentUpon>Wizard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Shortcuts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +108,15 @@
     <EmbeddedResource Include="ConfigurationForm.resx">
       <DependentUpon>ConfigurationForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigWizard\aConfigWizardPanel.resx">
+      <DependentUpon>aConfigWizardPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigWizard\Panels\WelcomePanel.resx">
+      <DependentUpon>WelcomePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigWizard\Wizard.resx">
+      <DependentUpon>Wizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Shortcuts.resx">
       <DependentUpon>Shortcuts.cs</DependentUpon>
