@@ -8,17 +8,17 @@ using System.Windows.Forms;
 
 namespace Nepochal.MemoMail.ConfigWizard.Panels
 {
-  public partial class PortablePanel : aConfigWizardPanel
+  public partial class SenderPanel : aConfigWizardPanel
   {
 
     #region ctors
 
-    public PortablePanel()
+    public SenderPanel()
     {
       InitializeComponent();
     }
 
-    public PortablePanel(Wizard pwOwner)
+    public SenderPanel(Wizard pwOwner)
     {
       mwOwner = pwOwner;
       InitializeComponent();
@@ -28,7 +28,7 @@ namespace Nepochal.MemoMail.ConfigWizard.Panels
 
     #region designer methods
 
-    private void radioButtonNonPortable_CheckedChanged(object sender, EventArgs e)
+    private void InputChanged(object sender, EventArgs e)
     {
       EnableNextButton = CheckInputs();
     }
@@ -39,20 +39,23 @@ namespace Nepochal.MemoMail.ConfigWizard.Panels
 
     internal override void OnShow()
     {
-      mwOwner.EnableBackButton = true;
-      mwOwner.EnableNextButton = CheckInputs();
+      EnableNextButton = CheckInputs();
     }
 
     internal override bool CheckInputs()
     {
-      if (radioButtonNonPortable.Checked)
-        return true;
-      return false;
+      if (!Common.CheckMailAddress(textBoxMail.Text) || textBoxPwd1.Text == string.Empty)
+        return false;
+      if (!textBoxPwd1.Text.Equals(textBoxpwd2.Text))
+        return false;
+      return true;
     }
 
     internal override void InsertInformationIntoConfig(Config pcConfig)
     {
-      mwOwner.PortableMode = radioButtonPortable.Checked;
+      pcConfig.From = textBoxName.Text;
+      pcConfig.SmtpAddress = textBoxMail.Text;
+      pcConfig.Password = textBoxPwd1.Text;
     }
 
     #endregion

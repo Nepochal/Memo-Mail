@@ -87,6 +87,12 @@
     <Compile Include="ConfigWizard\Panels\PortablePanel.Designer.cs">
       <DependentUpon>PortablePanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfigWizard\Panels\SenderPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConfigWizard\Panels\SenderPanel.Designer.cs">
+      <DependentUpon>SenderPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConfigWizard\Panels\WelcomePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConfigWizard\Panels\PortablePanel.resx">
       <DependentUpon>PortablePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigWizard\Panels\SenderPanel.resx">
+      <DependentUpon>SenderPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConfigWizard\Panels\WelcomePanel.resx">
       <DependentUpon>WelcomePanel.cs</DependentUpon>
