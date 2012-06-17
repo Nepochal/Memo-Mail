@@ -34,6 +34,13 @@ namespace Nepochal.MemoMail
   public partial class SendForm : Form
   {
 
+    #region Delegates
+
+    private delegate void ErrorWhileSendingDelegate();
+    private delegate void CloseProgramDelegate();
+
+    #endregion
+
     #region Member Variables
 
     private Config mcConfig;
@@ -65,6 +72,8 @@ namespace Nepochal.MemoMail
     {
       textBoxHeader.Text = mcConfig.Header;
       TopMost = mcConfig.SendFormForeground;
+      if (mcConfig.Clipboard2Mail && Clipboard.ContainsText())
+        textBoxMessage.Text = string.Format("{0}{1}", Clipboard.GetText(), Environment.NewLine);
     }
 
     private void textBoxMessage_KeyDown(object sender, KeyEventArgs e)
@@ -155,9 +164,8 @@ namespace Nepochal.MemoMail
       msHeader = textBoxHeader.Text;
       msMessage = textBoxMessage.Text;
 
-      this.Visible = false;
+      Visible = false;
       MailSenderStart();
-      Close();
     }
 
     private void ShowHelp()
@@ -167,6 +175,22 @@ namespace Nepochal.MemoMail
       mcConfig.LocationHelp = lhHelp.Location;
       byte[] lbKey = Common.CreateKey();
       Config.SaveConfig(mcConfig, lbKey);
+    }
+
+    private void CloseProgram()
+    {
+      if (InvokeRequired)
+        Invoke(new CloseProgramDelegate(CloseProgram));
+      else
+        Close();
+    }
+
+    private void ErrorWhileSending()
+    {
+      if (InvokeRequired)
+        Invoke(new ErrorWhileSendingDelegate(ErrorWhileSending));
+      else
+        Visible = true;
     }
 
     #endregion
@@ -212,10 +236,12 @@ namespace Nepochal.MemoMail
         lmmMessage.Body = msMessage;
 
         lscSender.Send(lmmMessage);
+        CloseProgram();
       }
       catch (SmtpException e)
       {
         MessageBox.Show(string.Format("The e-mail could not be sent.{0}Please check if the smtp information were set correctly and that your internet connection works properly.", Environment.NewLine), "Memo-Mail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        ErrorWhileSending();
       }
     }
 
