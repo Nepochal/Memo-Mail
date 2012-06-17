@@ -1,4 +1,24 @@
-﻿namespace Nepochal.MemoMail
+﻿/*
+This file is part of the Memo-Mail Source Code.  
+
+Memo-Mail is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Memo-Mail is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Memo-Mail. If not, see <http://www.gnu.org/licenses/gpl.html>.
+
+The complete source code can be found at <https://github.com/Nepochal/Memo-Mail>.
+The installer for the current version can be found at [PLACEHOLDER].
+*/
+
+namespace Nepochal.MemoMail
 {
   partial class SendForm
   {
@@ -40,18 +60,22 @@
       this.ToolStripMenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStripMenuItemShortcuts = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStripMenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
+      this.textBoxHeader = new System.Windows.Forms.TextBox();
+      this.buttonSend = new System.Windows.Forms.Button();
       this.menuStrip.SuspendLayout();
       this.SuspendLayout();
       // 
       // textBoxMessage
       // 
-      this.textBoxMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.textBoxMessage.Location = new System.Drawing.Point(0, 24);
+      this.textBoxMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.textBoxMessage.Location = new System.Drawing.Point(0, 44);
       this.textBoxMessage.Multiline = true;
       this.textBoxMessage.Name = "textBoxMessage";
       this.textBoxMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.textBoxMessage.Size = new System.Drawing.Size(354, 202);
-      this.textBoxMessage.TabIndex = 0;
+      this.textBoxMessage.Size = new System.Drawing.Size(354, 147);
+      this.textBoxMessage.TabIndex = 2;
       this.textBoxMessage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxMessage_KeyDown);
       // 
       // menuStrip
@@ -62,7 +86,7 @@
       this.menuStrip.Location = new System.Drawing.Point(0, 0);
       this.menuStrip.Name = "menuStrip";
       this.menuStrip.Size = new System.Drawing.Size(354, 24);
-      this.menuStrip.TabIndex = 1;
+      this.menuStrip.TabIndex = 0;
       this.menuStrip.Text = "Menu";
       // 
       // fileToolStripMenuItem
@@ -134,11 +158,33 @@
       this.ToolStripMenuItemAbout.Text = "About Memo-Mail";
       this.ToolStripMenuItemAbout.Click += new System.EventHandler(this.ToolStripMenuItemAbout_Click);
       // 
+      // textBoxHeader
+      // 
+      this.textBoxHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.textBoxHeader.Location = new System.Drawing.Point(0, 24);
+      this.textBoxHeader.Name = "textBoxHeader";
+      this.textBoxHeader.Size = new System.Drawing.Size(354, 20);
+      this.textBoxHeader.TabIndex = 1;
+      // 
+      // buttonSend
+      // 
+      this.buttonSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+      this.buttonSend.Location = new System.Drawing.Point(273, 197);
+      this.buttonSend.Name = "buttonSend";
+      this.buttonSend.Size = new System.Drawing.Size(75, 23);
+      this.buttonSend.TabIndex = 3;
+      this.buttonSend.Text = "Send";
+      this.buttonSend.UseVisualStyleBackColor = true;
+      this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
+      // 
       // SendForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(354, 226);
+      this.Controls.Add(this.buttonSend);
+      this.Controls.Add(this.textBoxHeader);
       this.Controls.Add(this.textBoxMessage);
       this.Controls.Add(this.menuStrip);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -151,6 +197,7 @@
       this.Text = "Memo-Mail (unstable - in development)";
       this.TopMost = true;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SendForm_FormClosing);
+      this.Load += new System.EventHandler(this.SendForm_Load);
       this.menuStrip.ResumeLayout(false);
       this.menuStrip.PerformLayout();
       this.ResumeLayout(false);
@@ -171,5 +218,7 @@
     private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemHelp;
     private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemShortcuts;
     private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemAbout;
+    private System.Windows.Forms.TextBox textBoxHeader;
+    private System.Windows.Forms.Button buttonSend;
   }
 }

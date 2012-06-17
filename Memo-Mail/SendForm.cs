@@ -39,6 +39,7 @@ namespace Nepochal.MemoMail
     private Config mcConfig;
     bool mbPushedEnter;
 
+    string msHeader;
     string msMessage;
 
     Thread mtMailSender;
@@ -59,6 +60,11 @@ namespace Nepochal.MemoMail
     #endregion
 
     #region Designer Methods
+
+    private void SendForm_Load(object sender, EventArgs e)
+    {
+      textBoxHeader.Text = mcConfig.Header;
+    }
 
     private void textBoxMessage_KeyDown(object sender, KeyEventArgs e)
     {
@@ -84,6 +90,11 @@ namespace Nepochal.MemoMail
           }
           break;
       }
+    }
+
+    private void buttonSend_Click(object sender, EventArgs e)
+    {
+      SendMessage();
     }
 
     #region MenuStrip
@@ -137,7 +148,9 @@ namespace Nepochal.MemoMail
 
     private void SendMessage()
     {
+      msHeader = textBoxHeader.Text;
       msMessage = textBoxMessage.Text;
+
       this.Visible = false;
       MailSenderStart();
       Close();
@@ -191,7 +204,7 @@ namespace Nepochal.MemoMail
         lmmMessage.To.Add(mcConfig.ReceiverAddress);
 
         //Message
-        lmmMessage.Subject = mcConfig.Header;
+        lmmMessage.Subject = msHeader;
         lmmMessage.Body = msMessage;
 
         lscSender.Send(lmmMessage);
