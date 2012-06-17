@@ -105,12 +105,6 @@ namespace Nepochal.MemoMail
       set { mbClipboard2Mail = value; }
     }
 
-    public bool ShowManual
-    {
-      get { return mbShowManual; }
-      set { mbShowManual = value; }
-    }
-
     public Point LocationSendForm
     {
       get { return mpSendFormPosition; }
@@ -157,7 +151,6 @@ namespace Nepochal.MemoMail
     private bool mbSendFormForeground = false;
     private bool mbSendMailOnDoubleEnter = false;
     private bool mbClipboard2Mail = false;
-    private bool mbShowManual = true;
     private Point mpSendFormPosition = new Point(200, 200);
     private int miSendFormHeight = 264;
     private int miSendFormWidth = 370;

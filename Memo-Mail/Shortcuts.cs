@@ -28,24 +28,14 @@ using System.Windows.Forms;
 
 namespace Nepochal.MemoMail
 {
-  public partial class Help : Form
+  public partial class Shortcuts : Form
   {
-
-    #region Accessors
-
-    public bool ShowOnStartup
-    {
-      get { return checkBoxShowOnStartup.Checked; }
-    }
-
-    #endregion
 
     #region ctors
 
-    public Help(Config pcConfig)
+    public Shortcuts(Config pcConfig)
     {
       InitializeComponent();
-      checkBoxShowOnStartup.Checked = pcConfig.ShowManual;
       Location = pcConfig.LocationHelp;
     }
 

@@ -60,13 +60,6 @@ namespace Nepochal.MemoMail
 
     #region Designer Methods
 
-    private void SendForm_Load(object sender, EventArgs e)
-    {
-      //Show help dialog on startup
-      if (mcConfig.ShowManual)
-        ShowHelp();
-    }
-
     private void textBoxMessage_KeyDown(object sender, KeyEventArgs e)
     {
       if (e.KeyCode != Keys.Enter)
@@ -152,10 +145,8 @@ namespace Nepochal.MemoMail
 
     private void ShowHelp()
     {
-      Help lhHelp = new Help(mcConfig);
+      Shortcuts lhHelp = new Shortcuts(mcConfig);
       lhHelp.ShowDialog(this);
-      if (lhHelp.ShowOnStartup != mcConfig.ShowManual)
-        mcConfig.ShowManual = lhHelp.ShowOnStartup;
       mcConfig.LocationHelp = lhHelp.Location;
       byte[] lbKey = Common.CreateKey();
       Config.SaveConfig(mcConfig, lbKey);
@@ -205,7 +196,7 @@ namespace Nepochal.MemoMail
 
         lscSender.Send(lmmMessage);
       }
-      catch (SmtpException)
+      catch (SmtpException e)
       {
         MessageBox.Show(string.Format("The e-mail could not be sent.{0}Please check if the smtp information were set correctly and that your internet connection works properly.", Environment.NewLine), "Memo-Mail", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
