@@ -64,6 +64,7 @@ namespace Nepochal.MemoMail
     private void SendForm_Load(object sender, EventArgs e)
     {
       textBoxHeader.Text = mcConfig.Header;
+      TopMost = mcConfig.SendFormForeground;
     }
 
     private void textBoxMessage_KeyDown(object sender, KeyEventArgs e)
@@ -75,6 +76,8 @@ namespace Nepochal.MemoMail
       {
         //ENTER + ENTER: Send message
         case Keys.Enter:
+          if (!mcConfig.SendMailOnDoubleEnter)
+            break;
           if (mbPushedEnter)
             SendMessage();
           else
@@ -109,6 +112,7 @@ namespace Nepochal.MemoMail
       ConfigurationForm lcConfiguration = new ConfigurationForm(mcConfig);
       lcConfiguration.ShowDialog(this);
       mcConfig = lcConfiguration.Config;
+      TopMost = mcConfig.SendFormForeground;
     }
 
     private void ToolStripMenuItemExit_Click(object sender, EventArgs e)

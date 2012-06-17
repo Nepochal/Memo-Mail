@@ -195,7 +195,6 @@ namespace Nepochal.MemoMail
       this.Name = "SendForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
       this.Text = "Memo-Mail (unstable - in development)";
-      this.TopMost = true;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SendForm_FormClosing);
       this.Load += new System.EventHandler(this.SendForm_Load);
       this.menuStrip.ResumeLayout(false);
