@@ -122,8 +122,9 @@ namespace Nepochal.MemoMail.ConfigWizard
       Panels.PortablePanel lp2 = new Panels.PortablePanel(this);
       Panels.SenderPanel lp3 = new Panels.SenderPanel(this);
       Panels.SmtpPanel lp4 = new Panels.SmtpPanel(this);
+      Panels.ReceiverPanel lp5 = new Panels.ReceiverPanel(this);
 
-      mcwpPanels = new aConfigWizardPanel[] { lp1, lp2, lp3, lp4 };
+      mcwpPanels = new aConfigWizardPanel[] { lp1, lp2, lp3, lp4, lp5 };
     }
 
     private aConfigWizardPanel FindPanel(Type ptPanelType)

@@ -26,66 +26,47 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Nepochal.MemoMail.ConfigWizard
+namespace Nepochal.MemoMail.ConfigWizard.Panels
 {
-  public partial class aConfigWizardPanel : UserControl
+  public partial class ReceiverPanel : aConfigWizardPanel
   {
-
-    #region member variables
-
-    internal Wizard mwOwner;
-
-    #endregion
-
-    #region accessors
-
-    //Enables or disables the next button in the wizard-form
-    internal bool EnableNextButton
-    {
-      set { mwOwner.EnableNextButton = value; }
-    }
-
-    #endregion
 
     #region ctors
 
-    public aConfigWizardPanel(Wizard pwOwner)
+    public ReceiverPanel(Wizard pwOwner)
     {
-      InitializeComponent();
       mwOwner = pwOwner;
+      InitializeComponent();
     }
 
-    public aConfigWizardPanel()
+    public ReceiverPanel()
     {
       InitializeComponent();
     }
 
     #endregion
 
-    #region Methods
+    #region designer methods
 
-    //will be used when the panel shows up
-    internal virtual void OnShow()
+    private void InputChanged(object sender, EventArgs e)
     {
       EnableNextButton = CheckInputs();
     }
 
-    //checks all inputs for enabling or disabling the next button
-    internal virtual bool CheckInputs()
+    #endregion
+
+    #region own methods
+
+    internal override bool CheckInputs()
     {
-      throw new NotImplementedException();
+      return Common.CheckMailAddress(textBoxReceiver.Text);
     }
 
-    //Insert all Information into config. will always be automaticly done when the next button was clicked
-    internal virtual void InsertInformationIntoConfig(Config pcConfig)
+    internal override void InsertInformationIntoConfig(Config pcConfig)
     {
-      throw new NotImplementedException();
-    }
-
-    //Will be automaticly bound when this panel shows up and unbound when another panel is active
-    internal void WizardButtonNextClicked(object sender, EventArgs e)
-    {
-      InsertInformationIntoConfig(mwOwner.Config);
+      pcConfig.ReceiverAddress = textBoxReceiver.Text;
+      pcConfig.Header = textBoxDefaultHeader.Text;
+      pcConfig.AlwaysUseDefaultheader = checkBoxAlwaysUseDefaultSubject.Checked;
     }
 
     #endregion

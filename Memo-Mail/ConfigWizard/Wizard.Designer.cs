@@ -60,7 +60,7 @@ namespace Nepochal.MemoMail.ConfigWizard
       this.buttonCancel.Location = new System.Drawing.Point(403, 234);
       this.buttonCancel.Name = "buttonCancel";
       this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-      this.buttonCancel.TabIndex = 0;
+      this.buttonCancel.TabIndex = 3;
       this.buttonCancel.Text = "Cancel";
       this.buttonCancel.UseVisualStyleBackColor = true;
       this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
@@ -91,7 +91,7 @@ namespace Nepochal.MemoMail.ConfigWizard
       this.panelMain.Location = new System.Drawing.Point(2, 2);
       this.panelMain.Name = "panelMain";
       this.panelMain.Size = new System.Drawing.Size(480, 226);
-      this.panelMain.TabIndex = 3;
+      this.panelMain.TabIndex = 0;
       // 
       // Wizard
       // 

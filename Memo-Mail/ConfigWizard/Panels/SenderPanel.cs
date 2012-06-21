@@ -57,11 +57,6 @@ namespace Nepochal.MemoMail.ConfigWizard.Panels
 
     #region own methods
 
-    internal override void OnShow()
-    {
-      EnableNextButton = CheckInputs();
-    }
-
     internal override bool CheckInputs()
     {
       if (!Common.CheckMailAddress(textBoxMail.Text) || textBoxPwd1.Text == string.Empty)
