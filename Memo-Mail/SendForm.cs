@@ -74,6 +74,14 @@ namespace Nepochal.MemoMail
       TopMost = mcConfig.SendFormForeground;
       if (mcConfig.Clipboard2Mail && Clipboard.ContainsText())
         textBoxMessage.Text = string.Format("{0}{1}", Clipboard.GetText(), Environment.NewLine);
+
+      //hide subject-textbox and resize message-textbox when auto-use-default-header-option is set
+      if (mcConfig.AlwaysUseDefaultheader)
+      {
+        textBoxHeader.Visible = false;
+        textBoxMessage.Location = new Point(textBoxMessage.Location.X, textBoxMessage.Location.Y - textBoxHeader.Height);
+        textBoxMessage.Height += textBoxHeader.Height;
+      }
     }
 
     private void textBoxMessage_KeyDown(object sender, KeyEventArgs e)
@@ -214,7 +222,7 @@ namespace Nepochal.MemoMail
         //Configure send options
         lscSender.Host = mcConfig.SmtpServer;
         lscSender.Port = mcConfig.Port;
-        lscSender.Timeout =30000;
+        lscSender.Timeout = 30000;
         lscSender.Credentials = new NetworkCredential(mcConfig.Username, mcConfig.Password);
 
         MailMessage lmmMessage = new MailMessage();
