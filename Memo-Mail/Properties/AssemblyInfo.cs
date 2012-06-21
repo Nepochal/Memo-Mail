@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Memo-Mail")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("http://www.nepochal.de")]
+[assembly: AssemblyCompany("http://www.mischolz.de")]
 [assembly: AssemblyProduct("Memo-Mail")]
-[assembly: AssemblyCopyright("Copyright © Nepochal.de 2010")]
+[assembly: AssemblyCopyright("Copyright © mischolz.de 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // Sie können alle Werte angeben oder die standardmäßigen Build- und Revisionsnummern 
 // übernehmen, indem Sie "*" eingeben:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.1.18")]
+[assembly: AssemblyVersion("0.8.0.*")]
 //[assembly: AssemblyFileVersion("1.0.0.0")]

@@ -248,7 +248,13 @@ namespace Nepochal.MemoMail
       }
       catch (SmtpException e)
       {
-        MessageBox.Show(string.Format("The e-mail could not be sent.{0}Please check if the smtp information were set correctly and that your internet connection works properly.", Environment.NewLine), "Memo-Mail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        string lsError;
+        if (e.InnerException != null)
+          lsError = e.InnerException.Message;
+        else
+          lsError = e.Message;
+        MessageBox.Show(string.Format("The e-mail could not be sent. The following error occured:{0}{1}", Environment.NewLine, lsError), "Memo-Mail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //MessageBox.Show(string.Format("The e-mail could not be sent.{0}Please check if the smtp information were set correctly and that your internet connection works properly.", Environment.NewLine), "Memo-Mail", MessageBoxButtons.OK, MessageBoxIcon.Error);
         ErrorWhileSending();
       }
     }

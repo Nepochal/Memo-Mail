@@ -48,9 +48,9 @@ namespace Nepochal.MemoMail
 
     #region global information
 
-    public static readonly string msVersion = "0.7.0 a";
+    public static readonly string msVersion = "0.8.0 a";
     public static readonly int miRevision = 19;
-    public static readonly DateTime mdtRelease = new DateTime(2012, 6, 14);
+    public static readonly DateTime mdtRelease = new DateTime(2012, 6, 21);
 
     #endregion
 
