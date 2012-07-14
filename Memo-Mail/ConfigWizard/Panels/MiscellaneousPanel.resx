@@ -117,21 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelText.Text" xml:space="preserve">
-    <value>Welcome to Memo-Mail.
-
-This assistant will guide you through the configuration of the programm step by step.
-You can start this assistant again by clicking on "File -&gt; Start Configuration Wizard" in the main form.
-
-
-WARNING: If you alreade have a configuration file, the old one will be overwritten!
-
-
-
-
-
-
-
-Please click "Next" to beginn.</value>
-  </data>
 </root>

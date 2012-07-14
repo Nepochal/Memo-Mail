@@ -34,8 +34,8 @@ namespace Nepochal.MemoMail.ConfigWizard
     #region member variables
 
     private Config mcConfig = new Config();
-    private aConfigWizardPanel[] mcwpPanels; //all panels
-    private aConfigWizardPanel mcwpCurrentPanel; //the currently shown panel
+    private ConfigWizardPanel[] mcwpPanels; //all panels
+    private ConfigWizardPanel mcwpCurrentPanel; //the currently shown panel
     private int miCurrentPanelID = 0;
     private bool mbPortableMode = false;
 
@@ -123,21 +123,22 @@ namespace Nepochal.MemoMail.ConfigWizard
       Panels.SenderPanel lp3 = new Panels.SenderPanel(this);
       Panels.SmtpPanel lp4 = new Panels.SmtpPanel(this);
       Panels.ReceiverPanel lp5 = new Panels.ReceiverPanel(this);
+      Panels.MiscellaneousPanel lp6 = new Panels.MiscellaneousPanel(this);
 
-      mcwpPanels = new aConfigWizardPanel[] { lp1, lp2, lp3, lp4, lp5 };
+      mcwpPanels = new ConfigWizardPanel[] { lp1, lp2, lp3, lp4, lp5, lp6 };
     }
 
-    private aConfigWizardPanel FindPanel(Type ptPanelType)
+    private ConfigWizardPanel FindPanel(Type ptPanelType)
     {
       //Find the panel that is type of the parameter
-      foreach (aConfigWizardPanel lcwpCurrent in mcwpPanels)
+      foreach (ConfigWizardPanel lcwpCurrent in mcwpPanels)
         if (lcwpCurrent.GetType() == ptPanelType)
           return lcwpCurrent;
 
       return null;
     }
 
-    private void ShowPanel(aConfigWizardPanel pcwpPanel)
+    private void ShowPanel(ConfigWizardPanel pcwpPanel)
     {
       //Delete NextClickEvent on the old panel
       if (mcwpCurrentPanel != null)
@@ -153,7 +154,7 @@ namespace Nepochal.MemoMail.ConfigWizard
       pcwpPanel.OnShow();
     }
 
-    internal void BindNextClickedEvent(aConfigWizardPanel pcwPanel, bool pbBind)
+    internal void BindNextClickedEvent(ConfigWizardPanel pcwPanel, bool pbBind)
     {
       buttonNext.Click -= pcwPanel.WizardButtonNextClicked;
 

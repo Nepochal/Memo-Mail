@@ -75,11 +75,17 @@
     <Compile Include="ConfigurationForm.Designer.cs">
       <DependentUpon>ConfigurationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConfigWizard\aConfigWizardPanel.cs">
+    <Compile Include="ConfigWizard\ConfigWizardPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ConfigWizard\aConfigWizardPanel.Designer.cs">
-      <DependentUpon>aConfigWizardPanel.cs</DependentUpon>
+    <Compile Include="ConfigWizard\ConfigWizardPanel.Designer.cs">
+      <DependentUpon>ConfigWizardPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigWizard\Panels\MiscellaneousPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConfigWizard\Panels\MiscellaneousPanel.Designer.cs">
+      <DependentUpon>MiscellaneousPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="ConfigWizard\Panels\PortablePanel.cs">
       <SubType>UserControl</SubType>
@@ -133,8 +139,11 @@
       <DependentUpon>ConfigurationForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConfigWizard\aConfigWizardPanel.resx">
-      <DependentUpon>aConfigWizardPanel.cs</DependentUpon>
+    <EmbeddedResource Include="ConfigWizard\ConfigWizardPanel.resx">
+      <DependentUpon>ConfigWizardPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigWizard\Panels\MiscellaneousPanel.resx">
+      <DependentUpon>MiscellaneousPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConfigWizard\Panels\PortablePanel.resx">
       <DependentUpon>PortablePanel.cs</DependentUpon>

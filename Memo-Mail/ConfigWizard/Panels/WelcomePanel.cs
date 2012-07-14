@@ -28,7 +28,7 @@ using System.Windows.Forms;
 
 namespace Nepochal.MemoMail.ConfigWizard.Panels
 {
-  public partial class WelcomePanel : aConfigWizardPanel
+  public partial class WelcomePanel : ConfigWizardPanel
   {
 
     #region ctors

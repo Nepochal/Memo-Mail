@@ -28,7 +28,7 @@ using System.Windows.Forms;
 
 namespace Nepochal.MemoMail.ConfigWizard
 {
-  public partial class aConfigWizardPanel : UserControl
+  public partial class ConfigWizardPanel : UserControl
   {
 
     #region member variables
@@ -49,13 +49,13 @@ namespace Nepochal.MemoMail.ConfigWizard
 
     #region ctors
 
-    public aConfigWizardPanel(Wizard pwOwner)
+    public ConfigWizardPanel(Wizard pwOwner)
     {
       InitializeComponent();
       mwOwner = pwOwner;
     }
 
-    public aConfigWizardPanel()
+    public ConfigWizardPanel()
     {
       InitializeComponent();
     }

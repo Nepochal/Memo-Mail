@@ -28,29 +28,20 @@ using System.Windows.Forms;
 
 namespace Nepochal.MemoMail.ConfigWizard.Panels
 {
-  public partial class ReceiverPanel : ConfigWizardPanel
+  public partial class MiscellaneousPanel : ConfigWizardPanel
   {
 
     #region ctors
 
-    public ReceiverPanel(Wizard pwOwner)
+    public MiscellaneousPanel(Wizard pwOwner)
     {
       mwOwner = pwOwner;
       InitializeComponent();
     }
 
-    public ReceiverPanel()
+    public MiscellaneousPanel()
     {
       InitializeComponent();
-    }
-
-    #endregion
-
-    #region designer methods
-
-    private void InputChanged(object sender, EventArgs e)
-    {
-      EnableNextButton = CheckInputs();
     }
 
     #endregion
@@ -59,14 +50,14 @@ namespace Nepochal.MemoMail.ConfigWizard.Panels
 
     internal override bool CheckInputs()
     {
-      return Common.CheckMailAddress(textBoxReceiver.Text);
+      return true;
     }
 
     internal override void InsertInformationIntoConfig(Config pcConfig)
     {
-      pcConfig.ReceiverAddress = textBoxReceiver.Text;
-      pcConfig.Header = textBoxDefaultHeader.Text;
-      pcConfig.AlwaysUseDefaultheader = checkBoxAlwaysUseDefaultSubject.Checked;
+      pcConfig.SendFormForeground = checkBoxSendformForeground.Checked;
+      pcConfig.SendMailOnDoubleEnter = checkBoxSendDoubleEnter.Checked;
+      pcConfig.Clipboard2Mail = checkBoxClipboard2Mail.Checked;
     }
 
     #endregion

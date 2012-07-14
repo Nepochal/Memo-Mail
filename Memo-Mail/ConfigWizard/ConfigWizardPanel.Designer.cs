@@ -20,7 +20,7 @@ The installer for the current version can be found at [PLACEHOLDER].
 
 namespace Nepochal.MemoMail.ConfigWizard
 {
-  partial class aConfigWizardPanel
+  partial class ConfigWizardPanel
   {
     /// <summary> 
     /// Erforderliche Designervariable.
