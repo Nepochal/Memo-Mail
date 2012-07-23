@@ -50,6 +50,7 @@ namespace Nepochal.MemoMail.ConfigWizard.Panels
 
     internal override bool CheckInputs()
     {
+      mwOwner.SetFinishButton = false;
       return true;
     }
 

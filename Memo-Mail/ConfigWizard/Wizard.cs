@@ -39,6 +39,8 @@ namespace Nepochal.MemoMail.ConfigWizard
     private int miCurrentPanelID = 0;
     private bool mbPortableMode = false;
 
+    private bool mbFinishButton = false;
+
     #endregion
 
     #region accessors
@@ -47,6 +49,14 @@ namespace Nepochal.MemoMail.ConfigWizard
     internal bool EnableNextButton
     {
       set { buttonNext.Enabled = value; }
+    }
+    internal bool SetFinishButton
+    {
+      set
+      {
+        buttonNext.Text = value ? "Finish" : "Next >";
+        mbFinishButton = value;
+      }
     }
     internal bool EnableBackButton
     {
@@ -58,7 +68,7 @@ namespace Nepochal.MemoMail.ConfigWizard
       set { mbPortableMode = value; }
     }
 
-    internal Config Config
+    public Config Config
     {
       get { return mcConfig; }
       set { mcConfig = value; }
@@ -91,6 +101,9 @@ namespace Nepochal.MemoMail.ConfigWizard
 
     private void Wizard_FormClosing(object sender, FormClosingEventArgs e)
     {
+      if (DialogResult == System.Windows.Forms.DialogResult.OK)
+        return;
+
       if (MessageBox.Show("Do you really want to abort the configuration?", "Abort", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
       {
         DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -101,9 +114,17 @@ namespace Nepochal.MemoMail.ConfigWizard
 
     private void buttonNext_Click(object sender, EventArgs e)
     {
-      mcwpCurrentPanel.InsertInformationIntoConfig(mcConfig);
-      miCurrentPanelID++;
-      ShowPanel(mcwpPanels[miCurrentPanelID]);
+      if (mbFinishButton)
+      {
+        DialogResult = System.Windows.Forms.DialogResult.OK;
+        Close();
+      }
+      else
+      {
+        mcwpCurrentPanel.InsertInformationIntoConfig(mcConfig);
+        miCurrentPanelID++;
+        ShowPanel(mcwpPanels[miCurrentPanelID]);
+      }
     }
 
     private void buttonBack_Click(object sender, EventArgs e)
