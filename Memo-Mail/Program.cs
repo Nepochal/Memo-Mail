@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License
 along with Memo-Mail. If not, see <http://www.gnu.org/licenses/gpl.html>.
 
 The complete source code can be found at <https://github.com/Nepochal/Memo-Mail>.
-The installer for the current version can be found at [PLACEHOLDER].
+The installer for the current version can be found at <http://mischolz.de/?page_id=140>.
 */
 
 using System;
@@ -50,9 +50,9 @@ namespace Nepochal.MemoMail
 
     #region global information
 
-    public static readonly string msVersion = "0.8.0 a";
-    public static readonly int miRevision = 19;
-    public static readonly DateTime mdtRelease = new DateTime(2012, 6, 21);
+    public static readonly string msVersion = "0.9.0 a";
+    public static readonly int miRevision = 20;
+    public static readonly DateTime mdtRelease = new DateTime(2012, 7, 23);
 
     #endregion
 
