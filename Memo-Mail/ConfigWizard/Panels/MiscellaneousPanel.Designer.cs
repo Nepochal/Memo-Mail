@@ -43,8 +43,8 @@
       this.labelInfo.Name = "labelInfo";
       this.labelInfo.Size = new System.Drawing.Size(462, 30);
       this.labelInfo.TabIndex = 1;
-      this.labelInfo.Text = "Last please choose to folowing options that influence the behavior and the look o" +
-          "f the main sending form.";
+      this.labelInfo.Text = "Last please choose the following options that influence the behavior and the look" +
+    " of the main sending form.";
       // 
       // checkBoxSendformForeground
       // 
@@ -64,7 +64,7 @@
       this.labelSendformForeground.Size = new System.Drawing.Size(440, 13);
       this.labelSendformForeground.TabIndex = 4;
       this.labelSendformForeground.Text = "This option forces the sending form to be in the foreground even if you use anoth" +
-          "er program.";
+    "er program.";
       // 
       // labelSendDoubleEnter
       // 
@@ -73,7 +73,7 @@
       this.labelSendDoubleEnter.Size = new System.Drawing.Size(470, 26);
       this.labelSendDoubleEnter.TabIndex = 6;
       this.labelSendDoubleEnter.Text = "With this option you can send your mail by tapping Enter twice instead of clickin" +
-          "g the \"Send\"-Button.";
+    "g the \"Send\"-Button.";
       // 
       // checkBoxSendDoubleEnter
       // 
@@ -92,7 +92,7 @@
       this.labelClipboard2Mail.Size = new System.Drawing.Size(464, 27);
       this.labelClipboard2Mail.TabIndex = 8;
       this.labelClipboard2Mail.Text = "Enabling this option causes the program to auto insert your current clipboard int" +
-          "o the mail text when you start Memo-Mail.";
+    "o the mail text when you start Memo-Mail.";
       // 
       // checkBoxClipboard2Mail
       // 

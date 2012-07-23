@@ -81,6 +81,12 @@
     <Compile Include="ConfigWizard\ConfigWizardPanel.Designer.cs">
       <DependentUpon>ConfigWizardPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfigWizard\Panels\CompletionPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConfigWizard\Panels\CompletionPanel.Designer.cs">
+      <DependentUpon>CompletionPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConfigWizard\Panels\MiscellaneousPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConfigWizard\ConfigWizardPanel.resx">
       <DependentUpon>ConfigWizardPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigWizard\Panels\CompletionPanel.resx">
+      <DependentUpon>CompletionPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConfigWizard\Panels\MiscellaneousPanel.resx">
       <DependentUpon>MiscellaneousPanel.cs</DependentUpon>
