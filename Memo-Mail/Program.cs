@@ -21,6 +21,7 @@ The installer for the current version can be found at [PLACEHOLDER].
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Nepochal.MemoMail.ConfigWizard;
 
 namespace Nepochal.MemoMail
 {
@@ -36,10 +37,11 @@ namespace Nepochal.MemoMail
       Config lcConfig = Config.LoadConfig(lbKey);
       if (lcConfig == null)
       {
-        ConfigurationForm lcConfigurationForm = new ConfigurationForm();
-        Application.Run(lcConfigurationForm);
-        lcConfig = lcConfigurationForm.Config;
-        if (lcConfig == null)
+        Wizard lwWizard = new Wizard();
+        Application.Run(lwWizard);
+        if (lwWizard.DialogResult == DialogResult.OK)
+          lcConfig = lwWizard.Config;
+        else
           return;
       }
 

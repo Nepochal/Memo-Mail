@@ -135,7 +135,8 @@ namespace Nepochal.MemoMail
     private void ToolStripMenuItemConfigWizard_Click(object sender, EventArgs e)
     {
       ConfigWizard.Wizard lwWizard = new ConfigWizard.Wizard();
-      lwWizard.ShowDialog();
+      if (lwWizard.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+        mcConfig = lwWizard.Config;
     }
 
     private void ToolStripMenuItemExit_Click(object sender, EventArgs e)
