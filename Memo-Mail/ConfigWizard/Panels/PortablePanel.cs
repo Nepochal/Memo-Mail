@@ -53,6 +53,17 @@ namespace Nepochal.MemoMail.ConfigWizard.Panels
       EnableNextButton = CheckInputs();
     }
 
+    private void radioButtonPortable_CheckedChanged(object sender, EventArgs e)
+    {
+      textBoxPwd1.Enabled = textBoxPwd2.Enabled = radioButtonPortable.Checked;
+      EnableNextButton = CheckInputs();
+    }
+
+    private void Password_TextChanged(object sender, EventArgs e)
+    {
+      EnableNextButton = CheckInputs();
+    }
+
     #endregion
 
     #region own methods
@@ -67,12 +78,16 @@ namespace Nepochal.MemoMail.ConfigWizard.Panels
     {
       if (radioButtonNonPortable.Checked)
         return true;
-      return false;
+      return (!string.IsNullOrEmpty(textBoxPwd1.Text) && textBoxPwd1.Text == textBoxPwd2.Text);
     }
 
     internal override void InsertInformationIntoConfig(Config pcConfig)
     {
-      mwOwner.PortableMode = radioButtonPortable.Checked;
+      if (radioButtonPortable.Checked)
+      {
+        pcConfig.PortableMode = true;
+        pcConfig.PortablePassword = textBoxPwd1.Text;
+      }
     }
 
     #endregion

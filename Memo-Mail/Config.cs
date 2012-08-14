@@ -135,6 +135,20 @@ namespace Nepochal.MemoMail
       set { mpConfigPosition = value; }
     }
 
+    [XmlIgnoreAttribute]
+    public bool PortableMode
+    {
+      get { return mbPortableMode; }
+      set { mbPortableMode = value; }
+    }
+
+    [XmlIgnoreAttribute]
+    public string PortablePassword
+    {
+      get { return msPortablepassword; }
+      set { msPortablepassword = value; }
+    }
+
     #endregion
 
     #region Member Variables
@@ -156,6 +170,9 @@ namespace Nepochal.MemoMail
     private int miSendFormWidth = 370;
     private Point mpConfigPosition = new Point(200, 200);
     private Point mpHelpPosition = new Point(200, 200);
+
+    private bool mbPortableMode = false;
+    private string msPortablepassword = string.Empty;
 
     #endregion
 
@@ -243,6 +260,20 @@ namespace Nepochal.MemoMail
       {
         return null;
       }
+    }
+
+    internal static void DeleteConfig()
+    {
+      string lsNonPortableFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Memo-Mail");
+      lsNonPortableFile = Path.Combine(lsNonPortableFile, "Config.ini");
+
+      string lsPortableFile = Path.Combine(System.Windows.Forms.Application.StartupPath, "Config.ini");
+
+      if (File.Exists(lsNonPortableFile))
+        File.Delete(lsNonPortableFile);
+
+      if (File.Exists(lsPortableFile))
+        File.Delete(lsPortableFile);
     }
 
     #endregion

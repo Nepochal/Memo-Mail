@@ -37,7 +37,6 @@ namespace Nepochal.MemoMail.ConfigWizard
     private ConfigWizardPanel[] mcwpPanels; //all panels
     private ConfigWizardPanel mcwpCurrentPanel; //the currently shown panel
     private int miCurrentPanelID = 0;
-    private bool mbPortableMode = false;
 
     private bool mbFinishButton = false;
 
@@ -62,12 +61,8 @@ namespace Nepochal.MemoMail.ConfigWizard
     {
       set { buttonBack.Enabled = value; }
     }
-    internal bool PortableMode
-    {
-      get { return mbPortableMode; }
-      set { mbPortableMode = value; }
-    }
 
+    //for use in the owner instance
     public Config Config
     {
       get { return mcConfig; }
@@ -102,7 +97,10 @@ namespace Nepochal.MemoMail.ConfigWizard
     private void Wizard_FormClosing(object sender, FormClosingEventArgs e)
     {
       if (DialogResult == System.Windows.Forms.DialogResult.OK)
+      {
+        Config.DeleteConfig();
         return;
+      }
 
       if (MessageBox.Show("Do you really want to abort the configuration?", "Abort", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
       {

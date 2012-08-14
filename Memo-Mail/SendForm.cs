@@ -188,8 +188,8 @@ namespace Nepochal.MemoMail
       Shortcuts lhHelp = new Shortcuts(mcConfig);
       lhHelp.ShowDialog(this);
       mcConfig.LocationHelp = lhHelp.Location;
-      byte[] lbKey = Common.CreateKey();
-      Config.SaveConfig(mcConfig, lbKey);
+      //byte[] lbKey = Common.CreateKey();
+      //Config.SaveConfig(mcConfig, lbKey);
     }
 
     private void CloseProgram()

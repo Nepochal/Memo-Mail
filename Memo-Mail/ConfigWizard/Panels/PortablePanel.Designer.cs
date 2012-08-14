@@ -101,14 +101,14 @@ namespace Nepochal.MemoMail.ConfigWizard.Panels
       // radioButtonPortable
       // 
       this.radioButtonPortable.AutoSize = true;
-      this.radioButtonPortable.Enabled = false;
       this.radioButtonPortable.Location = new System.Drawing.Point(10, 117);
       this.radioButtonPortable.Name = "radioButtonPortable";
-      this.radioButtonPortable.Size = new System.Drawing.Size(167, 17);
+      this.radioButtonPortable.Size = new System.Drawing.Size(64, 17);
       this.radioButtonPortable.TabIndex = 3;
       this.radioButtonPortable.TabStop = true;
-      this.radioButtonPortable.Text = "Portable (not implemented yet)";
+      this.radioButtonPortable.Text = "Portable";
       this.radioButtonPortable.UseVisualStyleBackColor = true;
+      this.radioButtonPortable.CheckedChanged += new System.EventHandler(this.radioButtonPortable_CheckedChanged);
       // 
       // labelPwd1
       // 
@@ -127,6 +127,7 @@ namespace Nepochal.MemoMail.ConfigWizard.Panels
       this.textBoxPwd1.PasswordChar = '*';
       this.textBoxPwd1.Size = new System.Drawing.Size(154, 20);
       this.textBoxPwd1.TabIndex = 6;
+      this.textBoxPwd1.TextChanged += new System.EventHandler(this.Password_TextChanged);
       // 
       // textBoxPwd2
       // 
@@ -136,6 +137,7 @@ namespace Nepochal.MemoMail.ConfigWizard.Panels
       this.textBoxPwd2.PasswordChar = '*';
       this.textBoxPwd2.Size = new System.Drawing.Size(154, 20);
       this.textBoxPwd2.TabIndex = 8;
+      this.textBoxPwd2.TextChanged += new System.EventHandler(this.Password_TextChanged);
       // 
       // label1
       // 
