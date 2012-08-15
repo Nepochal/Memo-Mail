@@ -57,6 +57,13 @@ namespace Nepochal.MemoMail.ConfigWizard.Panels
 
     #region own methods
 
+    internal override void OnShow()
+    {
+      base.OnShow();
+      textBoxServer.Focus();
+      textBoxServer.SelectAll();
+    }
+
     internal override bool CheckInputs()
     {
       if (!Common.CheckServer(textBoxServer.Text))

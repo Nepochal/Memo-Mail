@@ -56,7 +56,12 @@ namespace Nepochal.MemoMail.ConfigWizard.Panels
     #endregion
 
     #region own methods
-
+    internal override void OnShow()
+    {
+      base.OnShow();
+      textBoxReceiver.Focus();
+      textBoxReceiver.SelectAll();
+    }
     internal override bool CheckInputs()
     {
       return Common.CheckMailAddress(textBoxReceiver.Text);

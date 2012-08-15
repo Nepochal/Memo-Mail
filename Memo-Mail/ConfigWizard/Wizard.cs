@@ -184,6 +184,12 @@ namespace Nepochal.MemoMail.ConfigWizard
         buttonNext.Click += pcwPanel.WizardButtonNextClicked;
     }
 
+    //for use in the panel classes
+    internal void FocusNextButton()
+    {
+      buttonNext.Focus();
+    }
+
     #endregion
 
   }

@@ -61,6 +61,7 @@ namespace Nepochal.MemoMail.ConfigWizard.Panels
     {
       mwOwner.EnableBackButton = true;
       mwOwner.EnableNextButton = CheckInputs();
+      radioButtonNonPortable.Focus();
     }
 
     internal override bool CheckInputs()

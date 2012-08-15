@@ -107,6 +107,7 @@ namespace Nepochal.MemoMail.ConfigWizard
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "Wizard";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Memo-Mail Configuration Wizard";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Wizard_FormClosing);
       this.Load += new System.EventHandler(this.Wizard_Load);

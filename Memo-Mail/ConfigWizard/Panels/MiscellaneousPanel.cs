@@ -48,6 +48,12 @@ namespace Nepochal.MemoMail.ConfigWizard.Panels
 
     #region own methods
 
+    internal override void OnShow()
+    {
+      base.OnShow();
+      checkBoxSendformForeground.Focus();
+    }
+
     internal override bool CheckInputs()
     {
       mwOwner.SetFinishButton = false;
