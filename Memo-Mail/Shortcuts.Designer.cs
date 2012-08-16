@@ -134,11 +134,10 @@ namespace Nepochal.MemoMail
       this.buttonClose.Text = "Close";
       this.buttonClose.UseVisualStyleBackColor = true;
       // 
-      // Help
+      // Shortcuts
       // 
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
       this.ClientSize = new System.Drawing.Size(217, 124);
-      this.ControlBox = false;
       this.Controls.Add(this.buttonClose);
       this.Controls.Add(this.labelDoubleEnterText);
       this.Controls.Add(this.labelDoubleEnter);
@@ -154,10 +153,11 @@ namespace Nepochal.MemoMail
       this.MaximumSize = new System.Drawing.Size(223, 148);
       this.MinimizeBox = false;
       this.MinimumSize = new System.Drawing.Size(223, 148);
-      this.Name = "Help";
+      this.Name = "Shortcuts";
       this.ShowInTaskbar = false;
       this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
       this.Text = "Memo-Mail Shortcuts";
+      this.Load += new System.EventHandler(this.Shortcuts_Load);
       this.ResumeLayout(false);
 
     }

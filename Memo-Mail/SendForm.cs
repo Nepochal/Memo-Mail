@@ -82,6 +82,7 @@ namespace Nepochal.MemoMail
         textBoxMessage.Location = new Point(textBoxMessage.Location.X, textBoxMessage.Location.Y - textBoxHeader.Height);
         textBoxMessage.Height += textBoxHeader.Height;
       }
+      Common.AdjustForm(this);
     }
 
     private void textBoxMessage_KeyDown(object sender, KeyEventArgs e)

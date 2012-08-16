@@ -73,6 +73,7 @@ namespace Nepochal.MemoMail
 
     private void Configuration_Load(object sender, EventArgs e)
     {
+      Common.AdjustForm(this);
       BindChangeEvents();
     }
 

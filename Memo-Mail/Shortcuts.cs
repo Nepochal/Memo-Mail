@@ -41,5 +41,14 @@ namespace Nepochal.MemoMail
 
     #endregion
 
+    #region designer methods
+
+    private void Shortcuts_Load(object sender, EventArgs e)
+    {
+      Common.AdjustForm(this);
+    }
+
+    #endregion
+
   }
 }

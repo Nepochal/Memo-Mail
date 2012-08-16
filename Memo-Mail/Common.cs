@@ -24,6 +24,8 @@ using System.Text;
 using System.Security.Principal;
 using System.Security.Cryptography;
 using System.Collections;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace Nepochal.MemoMail
 {
@@ -134,6 +136,48 @@ namespace Nepochal.MemoMail
     }
 
     #endregion
+
+    public static void AdjustForm(Form pfForm)
+    {
+      int liWidth = Screen.GetWorkingArea(pfForm).Width;
+      int liHeight = Screen.GetWorkingArea(pfForm).Height;
+      int liLeftPoint = Screen.GetWorkingArea(pfForm).Left;
+      int liTopPoint = Screen.GetWorkingArea(pfForm).Top;
+
+      //Location
+      int liLocationX = pfForm.Location.X;
+      int liLocationY = pfForm.Location.Y;
+
+      //Right
+      if (liLocationX > liWidth - pfForm.Size.Width)
+        liLocationX = liWidth - pfForm.Size.Width + liLeftPoint;
+
+      //Bottom
+      if (liLocationY > liHeight - pfForm.Size.Height)
+        liLocationY = liHeight - pfForm.Size.Height + liTopPoint;
+
+      //Left
+      if (liLocationX < liLeftPoint)
+        liLocationX = liLeftPoint;
+
+      //Top
+      if (liLocationY < liTopPoint)
+        liLocationY = liTopPoint;
+
+
+      //Size
+
+      //Width
+      if (pfForm.Width > liWidth)
+        pfForm.Width = liWidth;
+
+      //Height
+      if (pfForm.Height > liHeight)
+        pfForm.Height = liHeight;
+
+
+      pfForm.Location = new Point(liLocationX, liLocationY);
+    }
 
   }
 }
