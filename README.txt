@@ -1,7 +1,4 @@
 Memo-Mail is a very simple smtp-client that allows you to quickly send mails to a specific e-mail address so that you can send links or notes from work to home for example. Once configured this program only shows a send form you can fill with text. With double enter the mail will be sent in background. 
-The installer for the current version can be found at http://mischolz.de/?page_id=140.
-
-Feel free to send me patches.
 
 Important notice
 ----------------
